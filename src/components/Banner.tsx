@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const Banner = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-5">
+    <div className="min-h-screen flex flex-col items-center justify-center gap-5 relative">
       <h2 className="text-5xl font-bold leading-12 tracking-[-1.05px] text-center">
         {" "}
         Content marketing solution & <br /> idea of your business
@@ -22,6 +22,7 @@ const Banner = () => {
           Learn More
         </Button>
       </div>
+      <div className="w-[366px] h-[366px] absolute bottom-2 left-[300px] rounded-full blur-[250px] bg-[#FF1B0033]"></div>
     </div>
   );
 };

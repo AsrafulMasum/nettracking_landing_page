@@ -5,10 +5,33 @@ import { usePathname } from "next/navigation";
 import { Switch } from "./ui/switch";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  // useGSAP(() => {
+  //   const navTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: "nav",
+  //       start: "bottom top",
+  //     },
+  //   });
+  //   navTimeline.fromTo(
+  //     "nav",
+  //     {
+  //       backgroundColor: "transparent",
+  //     },
+  //     {
+  //       backgroundColor: "#12141D80",
+  //       backgroundFilter: "blur(10px)",
+  //       duration: 0.5,
+  //       ease: "power1.inOut",
+  //     }
+  //   );
+  // });
 
   useEffect(() => {
     if (isDark) {
@@ -73,7 +96,9 @@ const Navbar = () => {
 
           <div className="w-full lg:w-auto flex items-center justify-between gap-4">
             <Button variant="secondary">Sign in</Button>
-            <Button className="bg-secondary/50 dark:bg-white dark:text-secondary">Sign up</Button>
+            <Button className="bg-secondary/50 dark:bg-white dark:text-secondary">
+              Sign up
+            </Button>
           </div>
         </div>
       </nav>
